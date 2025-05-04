@@ -11,8 +11,8 @@
 
     <div class="message-board">
         <% messages.forEach((message)=>{ %>
-            <div class="message-card"><%= message.user %>
-            <button><a href="/<%=message.user%>/message">See Message</a></button></div>
+            <div class="message-card"><%= message.username %>
+            <button><a href="/<%=message.username%>/message">See Message</a></button></div>
             
         <%}) %>   
     </div>

@@ -7,20 +7,11 @@ const app = express()
 
 const assetsPath = path.join(__dirname,"public")
 
+const messageController = require("./controllers/messageController")
+
 app.set('view engine','ejs')
 
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      added: new Date()
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      added: new Date()
-    }
-  ];
+
 
 //app level middleware that intercepts every request 
 
@@ -52,13 +43,7 @@ app.post('/new',(req,res)=>{
 })
 
 
-app.use('/', (req,res)=>{
-
-    res.render('index',{
-        title:"Mini Message Board",
-        messages:messages
-    })
-})
+app.use('/', messageController.getMessages )
 
 
 app.listen(3000,(req,res)=>{
