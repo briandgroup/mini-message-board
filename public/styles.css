@@ -1,0 +1,18 @@
+.message-board {
+    background-color: salmon;
+    padding: 20px;;
+    max-width: 500px;
+    margin:auto
+}
+
+.message-card{
+    padding:20px;
+    display: flex;
+    background-color: beige;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.message-heading{
+    text-align: center;
+}
