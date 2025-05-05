@@ -13,4 +13,18 @@ async function getMessages(req,res){
 
 }
 
-module.exports = { getMessages }
+
+async function getMessagesFromUser(req,res){
+    let user = req.params.user
+    console.log('getting message from', user)
+    const messages = await db.getUserMessages(user)
+
+    console.log('getting returned message', messages)
+
+    res.render('message',{
+        messages:messages,
+        user:user
+    })
+}
+
+module.exports = { getMessages, getMessagesFromUser }

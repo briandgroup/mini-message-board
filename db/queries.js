@@ -10,7 +10,9 @@ async function getAllMessages(){
 
 
 async function getUserMessages(user){
-    const {rows} = await pool.query("SELECT * FROM messages WHERE user = ($1)",[user])
+    const {rows} = await pool.query("SELECT * FROM messages WHERE username = ($1)",[user])
+
+    console.log('after queries object is', rows)
 
     return rows
 }
